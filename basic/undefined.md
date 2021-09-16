@@ -1,5 +1,10 @@
-수 정렬
-===
+---
+description: 백준 10989번
+---
+
+# 수 정렬하기 3
+
+```text
 import sys
 
 n = int(sys.stdin.readline())
@@ -12,3 +17,5 @@ for i in range(10001):
   if array[i] != 0:
     for j in range(array[i]):
       print(i)
+```
+

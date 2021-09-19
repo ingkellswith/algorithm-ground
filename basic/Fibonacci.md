@@ -22,7 +22,7 @@ else:
   print(temp) 
 ```
 
-### 2. 재귀 함수
+### 2. 재귀 함수 풀이
 
 ```text
 def fibonacci(n):
@@ -43,8 +43,9 @@ n = int(input())
 a, b = 0, 1
 
 while n > 0:
+    // 값 대입 두 번만 하면 끝나는 것이 핵심
     a, b = b, a + b
     n -= 1
-    
+
 print(a)
 ```

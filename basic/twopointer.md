@@ -2,7 +2,7 @@
 
 ## 백준 2003번 : 수들의 합 2
 
-### 1. 단순 반복문
+### 1. 단순 반복문 풀이
 
 ```text
 count, sum=list(map(int, input().split(' ')))
@@ -24,7 +24,7 @@ for i in range(count):
 print(counting)
 ```
 
-### 2. 투 포인터
+### 2. 투 포인터 풀이
 
 ```text
 n,m = map(int, input().split())

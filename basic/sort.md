@@ -47,5 +47,18 @@ def insert_sort(x):
   return x
 ```
 
+## 백준 2750번 : 수 정렬하기
+```text
+n=int(input())
+array=list()
+
+for _ in range(n):
+  array.append(int(input()))
+
+array.sort()
+
+for i in array:
+  print(i)
+```
 
 

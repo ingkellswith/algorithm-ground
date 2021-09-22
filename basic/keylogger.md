@@ -1,4 +1,8 @@
-# 키로거
+---
+description: '#더블 스택 #자료 구조 #스택 #연결 리스트'
+---
+
+# 키 로거
 
 ## 백준 5397번 : 키로거
 
@@ -29,3 +33,4 @@ for _ in range(test_case):
   left_stack.extend(reversed(right_stack))
   print(''.join(left_stack))
 ```
+

@@ -46,6 +46,7 @@ def insert_sort(x):
     x[j+1] = key;
   return x
 ```
+---  
 
 ## 백준 2750번 : 수 정렬하기
 ```text
@@ -60,5 +61,57 @@ array.sort()
 for i in array:
   print(i)
 ```
+---  
 
+## 백준 10814번 : 나이순 정렬
+```text
+count=int(input())
+arr=[]
+for _ in range(count):
+  a=input().split(' ')
+  arr.append((int(a[0]),a[1]))
+arr2 = sorted(arr, key = lambda x : x[0])
+for i in arr2:
+  print(i[0],i[1])
+```
+
+---
+
+## 백준 11650번 : 좌표 정렬
+```text
+count=int(input())
+array=list()
+for _ in range(count):
+  a,b =map(int,input().split(' '))
+  array.append((a,b))
+array=sorted(array)
+# 바로 윗줄 코드는 array=sorted(array, key=lambda x : (x[0],x[1]))와 동일
+for i in array:
+  print(i[0],i[1])
+```
+
+---
+
+
+## 백준 10989번 : 수 정렬하기 3
+
+```text
+import sys
+
+n = int(sys.stdin.readline())
+array = [0] * 10001
+
+for i in range(n):
+  data = int(sys.stdin.readline())
+  array[data] += 1
+for i in range(10001):
+  if array[i] != 0:
+    for j in range(array[i]):
+      print(i)
+```
+문제의 조건에 따라 배열이 너무 커지면 메모리 초과가 발생할 수 있다.  
+일반적으로 풀게 되면 배열의 크기가 10,000,000이 될 수도 있기 때문에 다른 방법으로 접근해야 한다.  
+따라서 1~10000부터 사용하는 숫자의 개수를 세어, 크기가 10000인 배열을 사용했다.  
+
+---
 

@@ -5,7 +5,7 @@
   * [정렬](basic/sort.md)
   * [SHA-256](basic/sha256.md)
   * [투 포인터](basic/twopointer.md)
-  * [피보나치](basic/undefined.md)
+  * [피보나치](basic/fibonacci.md)
   * [Z 재귀함수](basic/z.md)
   * [친구 네트워크](basic/friendnetwork.md)
   * [조합](basic/blackjack.md)

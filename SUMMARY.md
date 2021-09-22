@@ -3,7 +3,7 @@
 * [🖋 알고리즘 스터디를 기록하는 공간](README.md)
 * [Basic](basic/README.md)
   * [정렬](basic/sort.md)
-  * [순열과 조합](basic/combinationt.md)
+  * [순열과 조합](basic/combination.md)
   * [SHA-256](basic/sha256.md)
   * [투 포인터](basic/twopointer.md)
   * [피보나치](basic/fibona.md)

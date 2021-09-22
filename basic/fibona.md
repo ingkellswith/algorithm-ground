@@ -1,3 +1,7 @@
+---
+description: '#수학 #구현'
+---
+
 # 피보나치
 
 ## 백준 2747번 : 피보나치 수
@@ -15,11 +19,11 @@ for n in range(count):
   temp=a+b
   a=b
   b=temp
-  
+
 if(temp == 0):
   print(1)
 else:
-  print(temp) 
+  print(temp)
 ```
 
 ### 2. 재귀 함수 풀이
@@ -49,3 +53,4 @@ while n > 0:
 
 print(a)
 ```
+

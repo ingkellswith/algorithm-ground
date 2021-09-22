@@ -1,3 +1,7 @@
+---
+description: '#구현'
+---
+
 # 음계
 
 ## 백준 2920번 : 음계
@@ -20,3 +24,4 @@ elif descending:
 else:
     print('mixed')
 ```
+

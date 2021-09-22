@@ -1,4 +1,8 @@
-# 프린터 큐
+---
+description: '#큐 #구현 #자료 구조 #시뮬레이션'
+---
+
+# 큐
 
 ## 백준 1966번 : 프린터큐
 
@@ -22,3 +26,4 @@ for _ in range(test_case):
     else:
       queue.append(queue.pop(0))
 ```
+

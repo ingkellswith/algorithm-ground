@@ -1,4 +1,8 @@
-# 블랙잭
+---
+description: '#순열과 조합 #브루트포스 알고리즘'
+---
+
+# 조합
 
 ## 백준 2798번 : 블랙잭
 
@@ -22,3 +26,4 @@ for i in range(0,length):
 
 print(result)
 ```
+

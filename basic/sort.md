@@ -1,4 +1,8 @@
-# 내림차순 정렬
+---
+description: '#정렬 #문자열'
+---
+
+# 정렬
 
 ## 백준 1427번 : 소트인사이드
 
@@ -20,21 +24,22 @@ print(b)
 ```
 
 위 풀이는  
-선택 정렬을 내림차순으로 진행한 것과 같다.  
+선택 정렬을 내림차순으로 진행한 것과 같다.
 
-### 2. 버블 정렬(참고)
+### 2. 버블 정렬\(참고\)
 
 ```text
 def bubbleSort(x):
-	length = len(x)-1
-	for i in range(length):
-		for j in range(length-i):
-			if x[j] > x[j+1]:
-				x[j], x[j+1] = x[j+1], x[j]
-	return x
+    length = len(x)-1
+    for i in range(length):
+        for j in range(length-i):
+            if x[j] > x[j+1]:
+                x[j], x[j+1] = x[j+1], x[j]
+    return x
 ```
 
-### 3. 삽입 정렬(참고)
+### 3. 삽입 정렬\(참고\)
+
 ```text
 def insert_sort(x):
   for i in range(1, len(x)):
@@ -46,9 +51,9 @@ def insert_sort(x):
     x[j+1] = key;
   return x
 ```
----  
 
 ## 백준 2750번 : 수 정렬하기
+
 ```text
 n=int(input())
 array=list()
@@ -61,9 +66,9 @@ array.sort()
 for i in array:
   print(i)
 ```
----  
 
 ## 백준 10814번 : 나이순 정렬
+
 ```text
 count=int(input())
 arr=[]
@@ -75,9 +80,8 @@ for i in arr2:
   print(i[0],i[1])
 ```
 
----
-
 ## 백준 11650번 : 좌표 정렬
+
 ```text
 count=int(input())
 array=list()
@@ -89,9 +93,6 @@ array=sorted(array)
 for i in array:
   print(i[0],i[1])
 ```
-
----
-
 
 ## 백준 10989번 : 수 정렬하기 3
 
@@ -109,9 +110,8 @@ for i in range(10001):
     for j in range(array[i]):
       print(i)
 ```
+
 문제의 조건에 따라 배열이 너무 커지면 메모리 초과가 발생할 수 있다.  
 일반적으로 풀게 되면 배열의 크기가 10,000,000이 될 수도 있기 때문에 다른 방법으로 접근해야 한다.  
-따라서 1~10000부터 사용하는 숫자의 개수를 세어, 크기가 10000인 배열을 사용했다.  
-
----
+따라서 1~10000부터 사용하는 숫자의 개수를 세어, 크기가 10000인 배열을 사용했다.
 

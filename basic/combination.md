@@ -7,13 +7,13 @@ description: '#순열과 조합 #브루트포스 알고리즘'
 파이썬 기본 라이브러리 사용법 출처 : https://heytech.tistory.com/78
 
 1. 순열
-
 ```text
 from itertools import permutations 
 dataset = ['A', 'B', 'C'] 
 res = list(permutations(dataset, 3))
 print(f"모든 조합: {res}") 
-# [('A', 'B', 'C'), ('A', 'C', 'B'), ('B', 'A', 'C'), ('B', 'C', 'A'), ('C', 'A', 'B'), ('C', 'B', 'A')]
+# [('A', 'B', 'C'), ('A', 'C', 'B'), ('B', 'A', 'C'), 
+# ('B', 'C', 'A'), ('C', 'A', 'B'), ('C', 'B', 'A')]
 ```
 
 2. 조합

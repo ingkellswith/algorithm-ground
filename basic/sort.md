@@ -115,3 +115,14 @@ for i in range(10001):
 일반적으로 풀게 되면 배열의 크기가 10,000,000이 될 수도 있기 때문에 다른 방법으로 접근해야 한다.  
 따라서 1~10000부터 사용하는 숫자의 개수를 세어, 크기가 10000인 배열을 사용했다.
 
+## 백준 2751번 : 수 정렬하기 2
+
+```text
+n = int(input())
+array = []
+for _ in range(n):
+  array.append(int(input()))
+array = sorted(array)
+for data in array:
+  print(data)
+```

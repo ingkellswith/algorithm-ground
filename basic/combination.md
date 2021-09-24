@@ -44,11 +44,10 @@ print(f"모든 경우: {res}")
 ```
 
 ---
-# 중첩된 반복문으로 구현한 조합
 
 ## 백준 2798번 : 블랙잭
 
-### 1. 풀이
+### 1. 중첩 반복문 풀이
 
 ```text
 n, m = list(map(int, input().split(' ')))
@@ -67,6 +66,27 @@ for i in range(0,length):
         result=max(result,sum_value)
 
 print(result)
+```
+
+### 2. 파이썬 기본 라이브러리 사용 풀이
+
+```text
+from itertools import combinations 
+ 
+n, m = list(map(int, input().split(' ')))
+data = list(map(int, input().split(' ')))
+
+res = list(combinations(data, 3))
+
+max_number=0
+for i in res:
+  sum=0
+  for j in i:
+    sum=sum+j
+  if(sum<=m):
+    max_number=max(sum,max_number)
+
+print(max_number)
 ```
 
 # 중복순열 

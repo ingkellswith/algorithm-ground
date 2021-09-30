@@ -28,8 +28,10 @@ for j in range(m):
   if column[j] == 0:
     column_count += 1
 print(max(row_count, column_count))
-```
+```  
+
 처음보는 유형이었다.  
 해답은 'X'가 선언되지 않은 행, 열에 대해서  
 max(row_count, column_count)을 구하면 되는 문제였다.  
+
 ---

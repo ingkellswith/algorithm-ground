@@ -1,9 +1,11 @@
 # Table of contents
 
 * [🖋 알고리즘 스터디를 기록하는 공간](README.md)
-* [Basic](basic/README.md)
+* [기본](basic/README.md)
   * [정렬](basic/sort.md)
   * [순열과 조합](basic/combination.md)
+  * [탐색](basic/search.md)
+  * [이분 탐색](basic/binarysearch.md)
   * [SHA-256](basic/sha256.md)
   * [투 포인터](basic/twopointer.md)
   * [피보나치](basic/fibona.md)
@@ -14,4 +16,7 @@
   * [음계](basic/musicscale.md)
   * [큐](basic/queue.md)
   * [스택 수열](basic/stacksequence.md)
+* [기타](others/README.md)
+  * [정렬](others/bestseller.md)
+  * [순열과 조합](others/castle.md)
 

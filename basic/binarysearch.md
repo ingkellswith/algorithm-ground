@@ -2,6 +2,32 @@
 description: '#이분 탐색 #매개 변수 탐색'
 ---
 
+# 이진 탐색 기본 코드
+```text
+data_list = [66, 65, 18, 71, 11, 10, 42, 68, 36, 89]
+data_list.sort()
+
+def binary_search(data, search):
+    print (data)
+    if len(data) == 1 and search == data[0]:
+        return True
+    if len(data) == 1 and search != data[0]:
+        return False
+    if len(data) == 0:
+        return False
+    
+    medium = len(data) // 2
+    if search == data[medium]:
+        return True
+    else:
+        if search > data[medium]:
+            return binary_search(data[medium+1:], search)
+        else:
+            return binary_search(data[:medium], search)
+
+binary_search(data_list, 66)
+```
+
 # 이분 탐색
 
 ## 백준 2110번 : 공유기 설치

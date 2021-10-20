@@ -70,22 +70,22 @@ print(result)
 ### 1. 풀이
 
 ```text
-from collections import deque
+from collections import defaultdict
 
 n, m = map(int, input().split())
-adj = [[] for _ in range(n + 1)]
+adj = defaultdict(list)
 
 def bfs(c):
-  queue = deque([start_node])
-  visited = [False] * (n + 1)
-  visited[start_node] = True
-  while queue:
-    x = queue.popleft()
-    for y, weight in adj[x]:
-      if not visited[y] and weight >= c:
-        visited[y] = True
-        queue.append(y)
-  return visited[end_node]
+  visited = list()
+  need_visit = list()
+  need_visit.append(start_node)
+  while need_visit:
+    node = need_visit.pop(0)
+    for y, weight in adj[node]:
+      if y not in visited and weight >= c:
+        visited.append(y)
+        need_visit.append(y) # 다시 while문으로 돌아간다. 즉 need_visit변경 시 while문은 변경된 것을 체크함.
+  return end_node in visited
 
 start = 1000000000
 end = 1

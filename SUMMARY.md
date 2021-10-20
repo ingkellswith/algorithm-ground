@@ -1,6 +1,11 @@
 # Table of contents
 
 * [🖋 알고리즘 스터디를 기록하는 공간](README.md)
+* [이론](algorithmTheory/README.md)
+  * [백트래킹](algorithmTheory/backtracking.md) 
+  * [bfs & dfs](algorithmTheory/bfsdfs.md)
+  * [최단경로](algorithmTheory/minimumway.md)
+  * [최소신장트리](algorithmTheory/spanningtree.md)
 * [기본](basic/README.md)
   * [정렬](basic/sort.md)
   * [순열과 조합](basic/combination.md)
@@ -19,4 +24,3 @@
 * [기타](others/README.md)
   * [정렬](others/bestseller.md)
   * [순열과 조합](others/castle.md)
-

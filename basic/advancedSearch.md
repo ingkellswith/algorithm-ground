@@ -73,8 +73,10 @@ import heapq
 n, m = map(int, input().split()) 
 array = [[] for i in range(n + 1)]
 # ex) array=[[],[],[],[],[]]
+# array내부의 array는 자신보다 늦게 나와야 할 원소가 들어감
 indegree = [0] * (n + 1)
 # ex) indegree=[0,0,0,0,0]
+# indegree는 0이 되면 heappush(원래 0이던 경우 제외)
 heap = []
 result = []
 
@@ -83,7 +85,9 @@ for _ in range(m):
   array[x].append(y)
   indegree[y] += 1
 # ex) array is like [[], [], [], [1], [2]]
+# 자신보다 먼저 나와야 할 원소를 나열 ex)자신보다 1,3이 먼저 나와야 하면 [1,3]
 # ex) indegree is like [0, 1, 1, 0, 0]
+# 자신보다 먼저 나와야할 원소가 많을수록 degree가 높아짐 ex)자신보다 먼저 나와야할 원소가 2개면 2
 for i in range(1, n + 1):
   if indegree[i] == 0:
     heapq.heappush(heap, i)
@@ -91,6 +95,7 @@ for i in range(1, n + 1):
 
 result = []
 while heap:
+  # heappop한 것만 result에 들어감
   data = heapq.heappop(heap)
   result.append(data)
   for y in array[data]:

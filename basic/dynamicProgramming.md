@@ -81,3 +81,100 @@ for i in range(1, n):
 
 print(max(result))
 ```
+
+---
+
+## 백준 9251번 : LCS(Longest Common Subsequence, 최장 공통 부분 수열)
+
+### - 다이나믹 프로그래밍
+
+### 1. 풀이
+```text
+x = input()
+y = input()
+
+arr = [[0] * (len(y) + 1) for _ in range(len(x) + 1)]
+
+for i in range(1, len(x) + 1):
+  for j in range(1, len(y) + 1):
+    if x[i - 1] == y[j - 1]:
+      arr[i][j] = arr[i - 1][j - 1] + 1
+    else:
+      arr[i][j] = max(arr[i][j - 1], arr[i - 1][j])
+
+print(arr[len(x)][len(y)])
+```
+
+---
+
+## 백준 1495번 : 기타리스트
+
+### - 다이나믹 프로그래밍
+
+### 1. 풀이
+
+```text
+n, s, m = map(int, input().split())
+arr = list(map(int, input().split()))
+
+dp = [[0] * (m + 1) for _ in range(n + 1)]
+dp[0][s] = 1
+
+for i in range(1, n + 1):
+  for j in range(m + 1):
+    if dp[i - 1][j] == 0:
+      continue
+    if j - arr[i - 1] >= 0:
+      dp[i][j - arr[i - 1]] = 1
+    if j + arr[i - 1] <= m:
+      dp[i][j + arr[i - 1]] = 1
+
+result = -1
+for i in range(m, -1, -1):
+  if dp[n][i] == 1:
+    result = i
+    break
+    
+print(result)
+```
+
+---
+
+## 백준 2655번 : 가장 높은 탑 쌓기
+
+### - 다이나믹 프로그래밍
+
+### 1. 풀이
+
+```text
+n = int(input())
+arr = []
+arr.append((0, 0, 0, 0))
+
+for i in range(1, n + 1):
+  area, height, weight = map(int, input().split())
+  arr.append((i, area, height, weight))
+# 무게를 기준으로 정렬합니다.
+arr.sort(key=lambda data: data[3])
+
+dp = [0] * (n + 1)
+
+for i in range(1, n + 1):
+  for j in range(0, i):
+    if arr[i][1] > arr[j][1]:
+      dp[i] = max(dp[i], dp[j] + arr[i][2])
+
+max_value = max(dp)
+index = n
+result = []
+
+while index != 0:
+  if max_value == dp[index]:
+    result.append(arr[index][0])
+    max_value -= arr[index][2]
+  index -= 1
+  
+result.reverse()
+print(len(result))
+[print(i) for i in result]
+```

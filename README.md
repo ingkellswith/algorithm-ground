@@ -6,12 +6,6 @@ description: '#algorithm'
 
 📒 알고리즘 스터디를 기록하는 공간입니다.
 
-GitBook : [깃북 링크](https://app.gitbook.com/@allover3773/s/algorithmground/)
-
-## 📃 목차
-
-* 이론
-* 유형
-* 기타
+GitBook : [깃북 링크](https://app.gitbook.com/s/YwkgwpgBRNbfSIUgm1CG/)
 
 

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [🖋 알고리즘 스터디를 기록하는 공간](README.md)
+* [알고리즘 풀이 저장소](README.md)
 * [이론](algorithmTheory/README.md)
   * [BFS & DFS 이론](algorithmTheory/bfsDfsTheory.md)
   * [다익스트라 이론](algorithmTheory/dijkstraTheory.md)

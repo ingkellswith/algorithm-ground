@@ -159,3 +159,84 @@ while True:
 
 print(result)
 ```
+---
+
+## 백준 2212번 : 센서
+
+### - 그리디 알고리즘, 정렬
+
+### 1. 풀이
+
+```text
+import sys
+
+n = int(input())
+k = int(input())
+
+# 집중국의 개수가 n 이상일 때
+if k >= n:
+  print(0) # 각 센서의 위치에 설치하면 되므로 정답은 0
+  sys.exit()
+# 모든 센서의 위치를 입력 받아 오름차순 정렬
+array = list(map(int, input().split(' ')))
+array.sort()
+# 각 센서 간의 거리를 계산하여 내림차순 정렬
+distances = []
+for i in range(1, n):
+  distances.append(array[i] - array[i - 1])
+distances.sort(reverse=True)
+# 가장 긴 거리부터 하나씩 제거
+for i in range(k - 1):
+  distances[i] = 0
+print(sum(distances))
+```
+
+---
+
+## 백준 1461번 : 도서관
+
+### - 그리디 알고리즘, 정렬
+
+### 1. 풀이  
+
+![baek1461](https://user-images.githubusercontent.com/55550753/146008609-e0f2f8d9-7484-4a55-b046-e8d0fd034d38.PNG)  
+  
+```text
+# 정답=왕복 거리-가장 먼 책의 편도 거리
+import heapq
+# n: 책의 개수, 
+# m: 세준이가 한 번에 들 수 있는 책의 개수
+n, m = map(int, input().split(' '))
+# 책의 위치
+array = list(map(int, input().split(' ')))
+positive = []
+negative = []
+# 가장 거리가 먼 책까지의 거리
+largest = max(max(array), - min(array))
+# 최대 힙(Max Heap)을 위해 원소를 음수로 구성
+for i in array:
+# 책의 위치가 양수인 경우
+  if i > 0:
+     heapq.heappush(positive, -i)
+  # 책의 위치가 음수인 경우
+  else:
+    heapq.heappush(negative, i)
+
+result = 0
+while positive:
+# 한 번에 m개씩 옮길 수 있으므로 m개씩 빼내기
+  result += heapq.heappop(positive)
+  for _ in range(m - 1):
+    if positive:
+      heapq.heappop(positive)
+
+while negative:
+# 한 번에 m개씩 옮길 수 있으므로 m개씩 빼내기
+  result += heapq.heappop(negative)
+  for _ in range(m - 1):
+    if negative:
+      heapq.heappop(negative)
+
+# 일반적으로 왕복 거리를 계산하지만, 가장 먼 곳은 편도 거리 계산
+print(-result * 2 - largest)
+```

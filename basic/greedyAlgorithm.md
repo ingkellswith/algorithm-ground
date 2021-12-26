@@ -240,3 +240,59 @@ while negative:
 # 일반적으로 왕복 거리를 계산하지만, 가장 먼 곳은 편도 거리 계산
 print(-result * 2 - largest)
 ```
+
+---
+
+## 백준 1781번 : 컵라면
+
+### - 자료 구조, 그리디 알고리즘, 우선순위 큐
+
+### 1. 시간 초과 풀이    
+  
+```text
+# 첫 줄에 숙제의 개수 N
+n = int(input())
+arr=[]
+for i in range(n):
+  deadline, noodle=map(int,input().split(' '))
+  arr.append((deadline, noodle))
+
+arr.sort()
+
+result=0
+for i in range(1, n+1):
+  temp=[]
+  for element in arr:
+    if(element[0]==i):
+      temp.append(element)
+  if(len(temp)>0):
+    result+=temp[-1][1]
+
+print(result)
+```
+
+### 2. 정답 풀이
+```text
+import heapq
+
+# 첫 줄에 숙제의 개수 N
+n = int(input())
+arr=[]
+q=[]
+
+for i in range(n):
+  a, b=map(int,input().split(' '))
+  arr.append((a, b))
+
+arr.sort()
+
+for i in arr:
+  a=i[0]
+  heapq.heappush(q,i[1])
+  # 데드라인 초과할 경우 그냥 원소 제거
+  if a<len(q):
+    heapq.heappop(q)
+
+print(sum(q))
+```
+우선순위 큐를 사용하면 한 번의 반복문으로 해결가능하다.

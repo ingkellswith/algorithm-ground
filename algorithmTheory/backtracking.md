@@ -26,9 +26,11 @@ NxN 크기의 체스판에 N개의 퀸을 서로 공격할 수 없도록 배치�
 
 ![n-queen3](https://user-images.githubusercontent.com/55550753/138076592-4fee9a44-00a4-4f56-9483-ccb95a5ff311.PNG)
 
-# N-queen 문제 해결 코드
+# N-queen 문제 해결 코드 : 백준 9663번
 
 ```text
+n=int(input())
+
 def is_available(candidate, current_col):
     current_row = len(candidate)
     for queen_row in range(current_row):    
@@ -54,5 +56,5 @@ def solve_n_queens(N):
     DFS(N, 0, [], final_result)
     return final_result
 
-print(solve_n_queens(4)) 
+print(len(solve_n_queens(n))) 
 ```

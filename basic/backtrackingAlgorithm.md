@@ -18,6 +18,7 @@ dy = [0, 0, -1, 1]
 def bfs(x, y):
   global result
   # 동일한 경우는 한 번만 계산하기 위하여 집합(Set) 자료형 사용
+  # list()사용하고 add대신 append사용해도 통과
   q = set()
   q.add((x, y, array[x][y]))
   while q:

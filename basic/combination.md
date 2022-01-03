@@ -5,8 +5,9 @@ description: '#순열과 조합 #브루트포스 알고리즘'
 # 파이썬에서의 순열과 조합
 
 파이썬 기본 라이브러리 사용법 출처 : https://heytech.tistory.com/78
+순열, 조합 공식 참고 : https://coding-factory.tistory.com/606
 
-1. 순열
+#1 순열
 ```text
 from itertools import permutations 
 dataset = ['A', 'B', 'C'] 
@@ -16,7 +17,7 @@ print(f"모든 조합: {res}")
 # ('B', 'C', 'A'), ('C', 'A', 'B'), ('C', 'B', 'A')]
 ```
 
-2. 조합
+#2 조합
 ```text
 from itertools import combinations 
 dataset = ['A', 'B', 'C'] 
@@ -25,7 +26,7 @@ print(f"모든 경우: {res}")
 # [('A', 'B'), ('A', 'C'), ('B', 'C')]
 ```
 
-3. 중복 순열
+#3 중복 순열
 ```text
 from itertools import product 
 dataset = ['A', 'B', 'C'] 
@@ -34,7 +35,7 @@ print(f"모든 경우: {res}")
 # [('A', 'A'), ('A', 'B'), ('A', 'C'), ('B', 'A'), ('B', 'B'), ('B', 'C'), ('C', 'A'), ('C', 'B'), ('C', 'C')]
 ```
 
-4. 중복 조합
+#4 중복 조합
 ```text
 from itertools import combinations_with_replacement 
 dataset = ['A', 'B', 'C'] 

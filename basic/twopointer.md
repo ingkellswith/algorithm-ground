@@ -46,10 +46,6 @@ while start <=end and end<=len(A):
         end+=1
     elif summ>m and start<end:
         start+=1
-    else:
-        start+=1
-        end+=1
 
 print(answer)
 ```
-

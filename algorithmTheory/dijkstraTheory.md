@@ -17,14 +17,17 @@ def dijkstra(graph, start):
     heapq.heappush(queue, [distances[start], start])
     
     while queue:
+        # current_node로 가는데 걸리는 길이가 current_distance
         current_distance, current_node = heapq.heappop(queue)
         
         if distances[current_node] < current_distance:
             continue
             
         for adjacent, weight in graph[current_node].items():
+            # distance = current_node로 가는데 걸리는 길이 + (근접한 다른)adjacent 노드로 가는데 걸리는 길이
             distance = current_distance + weight
             
+            # 위에서 계산한 distance와 기존 distance를 비교
             if distance < distances[adjacent]:
                 distances[adjacent] = distance
                 heapq.heappush(queue, [distance, adjacent])

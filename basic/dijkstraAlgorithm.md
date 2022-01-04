@@ -138,7 +138,7 @@ for i in result:
   print(i)
 ```
 
-정답은 맞으나 시간 초과가 발생한다.
+테스트 케이스는 맞으나 시간 초과가 발생한다.
 문제 풀이 방식에 역추적이 들어있으니 충분히 고민해 볼 문제다.
 
 ---
@@ -197,3 +197,115 @@ while True:
 ```
 백준 1987번 알파벳 - 백트래킹과 유사한 문제다.
 두 문제 비교해볼 것.
+
+---
+## 백준 11779번 : 최소비용 구하기2
+
+### - 그래프 이론, 다익스트라
+
+### 1. 풀이
+```text
+from heapq import heappop, heappush
+INF = float('inf')
+
+def sol(start, end):
+    dist = [INF for _ in range(N)]
+    dist[start] = 0
+    path = [-1 for _ in range(N)]
+    q = []
+    heappush(q, [0, start])
+    while q:
+        # point노드로 가는데에 cost가 소모된다.
+        cost, point = heappop(q)
+        for adjacent, weight in graph[point]:
+            # point노드에서 adjacent노드로 가는데에 weight+cost가 소모된다.
+            weight += cost
+            if weight < dist[adjacent]:
+                dist[adjacent] = weight
+                path[adjacent] = point
+                heappush(q, [weight, adjacent])
+    return dist[end], path
+# 첫째 줄에 도시의 개수 n(1≤n≤1,000) 
+# 둘째 줄에는 버스의 개수 m(1≤m≤100,000)
+N, M = int(input()), int(input())
+graph = [[] for _ in range(N)]
+# 1. 출발 도시 번호
+# 2. 도착지의 도시 번호
+# 3. 비용
+for _ in range(M):
+    S, E, C = map(int, input().split())
+    graph[S-1].append([E-1, C])
+# 출발지, 도착지
+start, end = map(int, input().split())
+# 함수 실행해서 최소비용과 경로배열 리턴
+costResult, p = sol(start-1, end-1)
+# 경로배열에서 경로를 찾는 과정
+pathResult = [end-1]
+temp = end-1
+while p[temp] != -1:
+    pathResult.append(p[temp])
+    temp = p[temp]
+# 결과 출력
+print(costResult)
+print(len(pathResult))
+for i in pathResult[::-1]:
+    print(i+1, end=' ')
+```
+테스트 케이스 출력값이
+```text
+4
+3
+1 4 5
+```
+로 나온다. 
+1 3 5나 1 4 5는 똑같이 
+최단 거리가 4이고 3개의 노드를 지나는 것이 동일하므로 문제는 없다고 생각한다.
+(1 3 5가 나와야 할 조건도 없음)
+
+---
+## 백준 1854번 : K번째 최단경로 찾기
+
+### - 그래프 이론, 다익스트라
+
+### 1. 풀이
+```text
+from collections import defaultdict
+import heapq
+# n은 각각 김 조교가 여행을 고려하고 있는 도시들의 개수
+# m은 도시 간에 존재하는 도로의 수
+# k는 k번째 최단경로
+n,m,k = map(int, input().split())
+
+graph=defaultdict(list)
+countDict=defaultdict(list)
+
+for _ in range(m):
+  a,b,c = map(int, input().split())
+  graph[a].append((b,c))
+
+INF=float('inf')
+distances=[INF for _ in range(m+1)]
+
+distances[1]=0
+q=[]
+heapq.heappush(q, [distances[1], 1])
+countDict[1].append(0)
+while q:
+  current_distance, current_node = heapq.heappop(q)
+  for adjacent, distance in graph[current_node]:
+    cost= current_distance + distance
+    # 최단경로 아니어도 그냥 다 세면 됨
+    countDict[adjacent].append(cost)
+    if(cost < distances[adjacent]):
+      distances[adjacent]=cost
+      heapq.heappush(q, [cost, adjacent])
+
+for i, arr in countDict.items():
+  if(i!=0 and len(arr)>=k ):
+    temp=sorted(arr)
+    print(temp[k-1])
+  else:
+    print(-1)
+
+```
+테스트 케이스는 통과했으나 정답은 아니다.

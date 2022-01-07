@@ -178,3 +178,61 @@ result.reverse()
 print(len(result))
 [print(i) for i in result]
 ```
+---
+
+## 백준 1014번 : 컨닝
+
+### - 다이나믹 프로그래밍, 비트마스킹, 최대 유량, 비트필드를 이용한 다이나믹 프로그래밍
+
+### 1. 오답 풀이
+```text
+test_case=int(input())
+
+result=[]
+
+for _ in range(test_case):
+  arr=list()
+  count=0
+  count2=0
+  n, m = list(map(int,input().split(' ')))
+
+  for i in range(n):
+    arr.append(list(input()))
+
+  if(m % 2 == 0):
+    for i in range(m//2):
+      for j in range(n):
+        if(arr[j][i*2]=='.'):
+          count+=1
+
+    for i in range(m//2):
+      for j in range(n):
+        if(arr[j][i*2+1]=='.'):
+          count2+=1
+
+    result.append(max(count, count2))
+  
+  elif(m % 2 == 1):
+    for i in range(m//2+1):
+      for j in range(n):
+        if(arr[j][i*2]=='.'):
+          count+=1
+
+    for i in range(m//2):
+      for j in range(n):
+        if(arr[j][i*2+1]=='.'):
+          count2+=1
+
+    result.append(max(count, count2))
+
+for i in result:
+  print(i)
+```
+```text
+.XXX
+XXXX
+X.XX
+```
+위 풀이는 이 유형을 만족하지 못한다.
+
+정답 풀이과정은 https://nerogarret.tistory.com/33을 참고

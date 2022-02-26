@@ -107,6 +107,31 @@ print(arr[len(x)][len(y)])
 
 ---
 
+## 백준 5582번 : 공통 부분 문자열
+
+### - 다이나믹 프로그래밍, 문자열
+
+### 1. 풀이
+```text
+answer = 0
+x, y = input(), input()
+
+dp=[[0] * (len(y) + 1) for _ in range(len(x) + 1)]
+
+for i in range(1, len(x) + 1):
+    for j in range(1, len(y) + 1):
+        if (x[i-1] == y[j-1]):
+            dp[i][j] = dp[i-1][j-1] + 1
+            answer = max(dp[i][j], answer)
+
+print(answer)
+```
+
+백준 **9251번** : LCS(Longest Common Subsequence, 최장 공통 부분 문자열)과 유사한 문제이나,
+**9251번**은 서로 떨어진 문자도 '공통 부분 문자열'로 취급하나 **5582번**은 서로 붙어 있는 문자만 '공통 부분 문자열'로 취급한다.
+
+---
+
 ## 백준 1495번 : 기타리스트
 
 ### - 다이나믹 프로그래밍
